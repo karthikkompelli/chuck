@@ -1,0 +1,41 @@
+apply plugin: 'maven-publish'
+
+/**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+
+def getVersionName = { ->
+    return "2.0.1" // Replace with version Name
+}
+
+def getArtificatId = { ->
+    return "library" // Replace with library name ID
+}
+
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId 'com.karthikkompelli.chuck'
+            artifactId getArtificatId()
+            version getVersionName()
+            artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            /** Configure path of your package repository on Github
+             *  Replace GITHUB_USERID with your/organisation Github userID and REPOSITORY with the repository name on GitHub
+             */
+            url = uri("https://maven.pkg.github.com/KarthikKompelli/chuck")
+
+            credentials {
+                /**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
+                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+            }
+        }
+    }
+}
