@@ -26,26 +26,35 @@ android {
         // but continue the build even when errors are found:
         abortOnError false
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
 }
 
-//publishing {
-//    publications {
-//        maven(MavenPublication) {
-//            groupId = 'com.karthikkompelli.chuck'
-//            artifactId = 'library-no-op'
-//            version = "2.1.3"
-//            pom {
-//                description = 'Bug fixes'
-//            }
-//        }
-//    }
-//    repositories {
-//        mavenLocal()
-//    }
-//}
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.karthikkompelli.chuck'
+            artifactId = 'library-no-op'
+            version = "2.1.9"
+            pom {
+                description = 'Bug fixes'
+            }
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
 //apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
 //apply from: rootProject.file('gradle/gradle-git-push.gradle')
