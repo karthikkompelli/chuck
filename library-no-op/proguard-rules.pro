@@ -1,0 +1,2 @@
+-keep class com.readystatesoftware.chuck.** { *; }
+-ignorewarnings
