@@ -50,7 +50,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.karthikkompelli.chuck'
             artifactId = 'chuck'
-            version = "2.1.5"
+            version = "2.1.6"
             pom {
                 description = 'Bug fixes'
             }
