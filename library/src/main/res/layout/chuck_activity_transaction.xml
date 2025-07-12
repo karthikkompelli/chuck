@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  ~ Copyright (C) 2017 Jeff Gilfelt.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,6 +19,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".internal.ui.TransactionActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -34,14 +34,14 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             <TextView
                 android:id="@+id/toolbar_title"
+                style="@style/Chuck.TextAppearance.TransactionTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Chuck.TextAppearance.TransactionTitle"
-                tools:text="Title"/>
+                tools:text="Title" />
 
         </android.support.v7.widget.Toolbar>
 
