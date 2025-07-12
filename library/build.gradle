@@ -47,12 +47,15 @@ dependencies {
 //===============================
 publishing {
     publications {
-        maven(MavenPublication) {
+        release(MavenPublication) {
             groupId = 'com.karthikkompelli.chuck'
             artifactId = 'chuck'
             version = "2.1.4"
             pom {
                 description = 'Bug fixes'
+            }
+            afterEvaluate {
+                from components.release
             }
         }
     }
