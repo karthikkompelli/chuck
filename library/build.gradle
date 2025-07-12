@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.readystatesoftware.chuck'
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -11,7 +11,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.google.code.gson:gson:2.13.1'
     implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
     implementation 'nl.qbusict:cupboard:2.2.0'
     implementation "com.android.support:design:$supportLibVersion"
