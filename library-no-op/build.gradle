@@ -43,7 +43,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.karthikkompelli.chuck'
             artifactId = 'library-no-op'
-            version = "2.1.9"
+            version = "2.2.0"
             pom {
                 description = 'Bug fixes'
             }
