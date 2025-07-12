@@ -77,8 +77,8 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.karthikkompelli.chuck'
-            artifactId = 'chuck'
-            version = "2.1.1"
+            artifactId = 'library'
+            version = "2.1.2"
             pom {
                 description = 'Bug fixes'
             }
