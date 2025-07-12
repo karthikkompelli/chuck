@@ -30,4 +30,4 @@ dependencies {
 }
 //apply plugin: 'com.github.dcendents.android-maven'
 
-//apply from: rootProject.file('gradle/gradle-git-push.gradle')
+apply from: rootProject.file('gradle/gradle-git-push.gradle')
